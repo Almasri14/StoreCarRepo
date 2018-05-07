@@ -1,0 +1,15 @@
+<div class="col-xs-10 form-group">
+  <label>Search</label>
+  <input [(ngModel)]="query">
+  <hr>
+  <template [ngIf]="loginService.IsAdmin()">
+    <button type="button" class="btn btn-primary" style="margin-bottom: 5px" (click)="OnAddNewCar()">Add new car</button>
+  </template>
+  <template [ngIf]="storeService.add">
+    <app-store-add></app-store-add>
+  </template>
+</div>
+<div *ngFor="let car of cars | filter:query" class="col-xs-4">
+  <app-store-item [store]="car"></app-store-item>
+</div>
+

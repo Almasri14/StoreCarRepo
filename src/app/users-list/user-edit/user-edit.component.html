@@ -1,0 +1,21 @@
+<div style="position: fixed;
+     z-index: 1; width: 200%; height: 200%;background-color: gray;opacity: 0.1" (click)="Cancel()">
+</div>
+<form (ngSubmit)="OnEdit(a)" #a="ngForm" class="col-md-1" style="position: fixed; margin: 0% 50%;
+ z-index: 2; width: 300px; height: 350px; border: solid 2px red ; background-color: lightgray">
+    <br>
+    <label>Email:</label>
+    <br>
+    <input type="email" id="em" name="email" ngModel required email #email="ngModel">
+    <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!!</span>
+    <hr>
+    <label>Status:</label>
+    <br>
+    <input type="status" id="status" name="status" ngModel required>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary dropdown-toggle" style="cursor: pointer" [disabled]="a.invalid"
+    >Edit</button>
+    <button type="button" class="btn btn-danger dropdown-toggle" style="cursor: pointer; float: right" (click)="Cancel()"
+    >Cancel</button>
+</form>

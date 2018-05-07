@@ -1,0 +1,35 @@
+<div class="col-xs-12" *ngIf="IsEmpty()">
+  <h1>{{appName | async}}</h1>
+  <br>
+  <h3>The cart is empty</h3>
+</div>
+<div class="col-xs-12" *ngIf="!IsEmpty()">
+    <button type="button" class="btn btn-danger" style="float: right ; margin-bottom: 5px" (click)="OnDelete()">Delete one peice</button>
+    <!--<button type="button" class="btn btn-danger" style="float: right ; margin-bottom: 5px; margin-right: 5px" (click)="OnDeleteAll()">Delete</button>-->
+    <button type="button" class="btn btn-danger" style="float: right ; margin-bottom: 5px ;margin-right: 5px"  (click)="OnDeleteAllItems()">Delete All</button>
+</div>
+<br>
+<div class="col-xs-12" *ngIf="!IsEmpty()">
+  <label><input type="checkbox" *ngIf="!cartService.onCheck" [(value)]=checkBox (click)="OnCheckAll()"/></label>
+  <br>
+  <br>
+</div>
+<div *ngFor="let item  of items">
+  <div *ngIf="item.owner === loginService.getEmail()">
+    <app-cart-component [car]=item class="col-xs-12"></app-cart-component>
+  </div>
+</div>
+<div *ngIf="cartService.buyNow">
+<app-buy-component [car]=cartService.getItemsToBuy()></app-buy-component>
+</div>
+<div class="col-xs-12" *ngIf="checkBox">
+  <button type="button" class="btn btn-success" style="float: right ; margin-bottom: 5px; margin-right: 5px" (click)="OnBuyAll()">BuyAll</button>
+</div>
+<div *ngIf="!checkBox">
+  <div class="col-xs-12" *ngIf="cartService.checkBoxValue">
+    <button type="button" class="btn btn-success" style="float: right ; margin-bottom: 5px; margin-right: 5px" (click)="OnBuyAll()">BuyAll</button>
+  </div>
+</div>
+<div *ngIf="cartService.buyAll">
+  <app-buy-component [car]=cartService.getItemsToBuy()></app-buy-component>
+</div>

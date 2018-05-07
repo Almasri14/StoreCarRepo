@@ -1,0 +1,7 @@
+<div class="col-xs-5">
+  <template [ngIf]="loginService.IsAdmin()">
+    <app-users-store></app-users-store>
+  </template>
+</div>
+<app-user-edit *ngIf="selectedUser" [user]="selectedUser"></app-user-edit>
+

@@ -1,0 +1,28 @@
+<div style="position: absolute;
+     z-index: 1; width: 200%; height: 200%" (click)="Cancel()">
+</div>
+<div class="col-xs-1" style="position: absolute; margin: 0% 40%;
+ z-index: 2; width: 300px; height: 400px; background-color: lightgray; border: 2px solid red">
+  <form (ngSubmit)="OnAdd(f)" #f="ngForm">
+    <div class="col-xs-2 form-group" style="margin: 5% 5%;">
+      <label>Car name:</label>
+      <input type="car" id="car" name="car" ngModel="" required>
+      <br>
+      <label>price:</label>
+      <input type="price" id="price" name="price" ngModel required>
+      <br>
+      <label>Description:</label>
+      <input type="Description" id="Description" name="Description" ngModel required>
+      <br>
+      <label>Path:</label>
+      <input type="Path" id="Path" name="Path" ngModel required>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-success dropdown-toggle" style="cursor: pointer" [disabled]="f.invalid"
+      >Add</button>
+      <hr>
+      <button type="button" class="btn btn-danger dropdown-toggle" style="cursor: pointer" (click)="Cancel()"
+      >cancel</button>
+    </div>
+  </form>
+</div>

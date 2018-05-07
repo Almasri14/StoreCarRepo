@@ -1,0 +1,14 @@
+table, td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table {
+  width: 100%;
+}
+td {
+  width: 33%;
+}
+
+
+

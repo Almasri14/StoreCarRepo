@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" style="background-color: lightgray">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="" class="navbar-brand">Java Store</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/store">Store</a></li>
+        <template [ngIf]="loginService.IsSignedIn()">
+          <template [ngIf]="!loginService.IsAdmin()">
+            <li><a routerLink="/cart">Cart</a></li>
+          </template>
+        </template>
+        <template [ngIf]="!loginService.IsSignedIn()">
+          <li><a routerLink="/login">LogIn</a></li>
+        </template>
+        <template [ngIf]="loginService.IsAdmin()">
+          <li><a routerLink="/users">Users</a></li>
+        </template>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="" style="cursor: pointer" (click)="onLogOut()" *ngIf="loginService.IsSignedIn()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

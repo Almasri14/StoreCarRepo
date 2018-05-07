@@ -1,0 +1,16 @@
+<a routerLink="" class="list-group-item clearfix" style="width: 100%" (click)="onSelected()">
+  <table>
+    <tr>
+      <td>
+        <h4 class="list-group-item-heading">{{store.name}}</h4>
+      </td>
+      <td>
+        <p class="list-group-item-text">{{store.price}}</p>
+      </td>
+      <td>
+        <img src="{{store.imagePath[0]}}" alt="{{store.name}}" class="img-responsive" style="max-height: 50px; width: 70px">
+      </td>
+    </tr>
+  </table>
+</a>
+<br>

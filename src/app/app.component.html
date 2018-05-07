@@ -1,0 +1,13 @@
+<div style="position: absolute;
+     z-index: 0; width: 110%; height: 110%;opacity: 0.4" *ngIf="!loginService.IsAdmin()">
+  <img src="https://blog.caranddriver.com/wp-content/uploads/2009/07/Cinque-Roadster-02-CUT1.jpg"
+       style="width: 110%; height: 110%;">
+</div>
+<div style="position: absolute;
+     z-index: 0; width: 110%; height: 110%;opacity: 0.5" *ngIf="loginService.IsAdmin()">
+  <img src="http://www.f1wax.com/images/f1waxpic330.jpg?305"
+       style="width: 100%; height: 200%;">
+</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
+

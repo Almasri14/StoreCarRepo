@@ -1,0 +1,20 @@
+<div *ngIf=car style="display: inline">
+  <label><input type="checkbox" *ngIf="!cartService.onCheckAll" [(value)]=checkBoxValue (click)="OnCheck()"/></label>
+  <div routerLink="/cart" class="list-group-item clearfix" style="width: 100%;" (click)="onSelected()">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{car.name}}</h4>
+      <p class="list-group-item-heading">{{car.description}}</p>
+      <p class="list-group-item-text">{{car.price}}</p>
+     <p class="list-group-item-text">({{car.amount}})</p>
+     <!--<img src="{{car.imagePath[0]}}" alt="{{car.name}}" class="img-responsive" style="max-height: 50px;">-->
+   </div>
+   <span class="pull-right">
+         <button type="button" class="btn btn-primary" style="float: right ; margin-bottom: 5px; margin-right: 5px" (click)="OnDeleteAll()">X</button>
+     <br>
+     <br>
+     <br>
+          <button type="button" class="btn btn-primary" style="float: right ; margin-bottom: 5px; margin-right: 5px" (click)="OnBuy()">Buy</button>
+   </span>
+  </div>
+  <hr>
+</div>

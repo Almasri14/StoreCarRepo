@@ -1,0 +1,16 @@
+<form (ngSubmit)="OnSignUp(f)" #f="ngForm">
+  <div class="col-xs-2 form-group" style="margin: 13% 40%;">
+    <label>Email:</label>
+    <input type="email" id="email" name="email" ngModel="" required email #email="ngModel">
+    <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!!</span>
+    <hr>
+    <label>Password:</label>
+    <input type="password" id="password" name="password" ngModel required>
+    <br>
+    <input type="radio" name="gender" value="Admin" ngModel>Admin<br>
+    <input type="radio" name="gender" value="User" ngModel>User<br>
+    <br>
+    <button type="submit" class="btn btn-success dropdown-toggle" style="cursor: pointer" [disabled]="f.invalid"
+    >Sign Up</button>
+  </div>
+</form>

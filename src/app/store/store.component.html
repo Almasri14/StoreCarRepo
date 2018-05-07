@@ -1,0 +1,15 @@
+<div  class="row">
+  <template [ngIf]="!loginService.IsAdmin()">
+  <div class="col-xs-12">
+    <app-store-list></app-store-list>
+    <br><br>
+  </div>
+  <app-store-detail *ngIf="selectedCar;else infoText"
+                    [store]="selectedCar"></app-store-detail>
+    </template>
+</div>
+<template [ngIf]="loginService.IsAdmin()">
+  <app-store-admin></app-store-admin>
+  <app-store-detail *ngIf="selectedCar;else infoText"
+                    [store]="selectedCar"></app-store-detail>
+</template>
